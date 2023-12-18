@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { FaArrowRight } from "react-icons/fa";
 
 const Contact = () => {
   const [inputValue, setInputValue] = useState("");
   const [currentField, setCurrentField] = useState("name");
   const [showButton, setShowButton] = useState(false);
+  const form = useRef();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -14,6 +16,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    .then((result) => {
+        console.log("this",result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
 
     // Add your logic here to handle the values based on the current field
     console.log(
@@ -56,7 +64,7 @@ const Contact = () => {
   };
 
   return (
-    <form className="flex px-60 py-6" onSubmit={handleSubmit}>
+    <form className="flex px-60 py-6" ref={form} onSubmit={handleSubmit}>
       {currentField === "" ? (
         <p className="text-5xl font-semibold text-center text-orange-400">
           Thank You! I'll contact you soon!
