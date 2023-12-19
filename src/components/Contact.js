@@ -1,5 +1,5 @@
-import React, { useState,useRef } from "react";
-import emailjs from '@emailjs/browser';
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { FaArrowRight } from "react-icons/fa";
 
 const Contact = () => {
@@ -16,12 +16,21 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-    .then((result) => {
-        console.log("this",result.text);
-    }, (error) => {
-        console.log(error.text);
-    });
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        form.current,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        (result) => {
+          console.log("this", result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
 
     // Add your logic here to handle the values based on the current field
     console.log(
@@ -53,11 +62,11 @@ const Contact = () => {
   const getLabelForField = () => {
     switch (currentField) {
       case "name":
-        return "Your Name:";
+        return "Your Name";
       case "email":
-        return "Your Email:";
+        return "Your Email";
       case "message":
-        return "Your Message:";
+        return "Your Message";
       default:
         return "";
     }
@@ -65,31 +74,34 @@ const Contact = () => {
 
   return (
     <form className="flex px-60 py-6" ref={form} onSubmit={handleSubmit}>
+      <h1>Get In Touch</h1>
       {currentField === "" ? (
         <p className="text-5xl font-semibold text-center text-orange-400">
           Thank You! I'll contact you soon!
         </p>
       ) : (
-        <>
+        <div className="flex flex-col w-full">
           <label htmlFor="inputValue" className="">
             {getLabelForField()}
           </label>
-          <input
-            type="text"
-            name="inputValue"
-            placeholder={`Enter ${
-              currentField.charAt(0).toUpperCase() + currentField.slice(1)
-            }`}
-            className="w-full h-12 border-black border-2 rounded-md"
-            value={inputValue}
-            onChange={handleChange}
-          />
-          {showButton && (
-            <button type="submit" className="">
-              <FaArrowRight />
-            </button>
-          )}
-        </>
+          <div className="flex">
+            <input
+              type="text"
+              name="inputValue"
+              placeholder={`Enter ${
+                currentField.charAt(0).toUpperCase() + currentField.slice(1)
+              }`}
+              className="w-full h-12 border-black border-2 rounded-md"
+              value={inputValue}
+              onChange={handleChange}
+            />
+            {showButton && (
+              <button type="submit" className="">
+                <FaArrowRight />
+              </button>
+            )}
+          </div>
+        </div>
       )}
     </form>
   );

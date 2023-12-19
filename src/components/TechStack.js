@@ -8,12 +8,12 @@ import { SiRedux } from "react-icons/si";
 import { SiFirebase } from "react-icons/si";
 const TechStak = () => {
   return (
-    <div className="flex gap-6 my-4">
-      <div className="flex gap-4">
-        <p className="text-xl">Tech Stack</p>{" "}
-        <p className="text-3xl text-gray-500">|</p>
+    <div className="flex gap-6 justify-center items-center w-[100%]">
+      <div className="flex justify-center items-center gap-4">
+        <p className="text-xl ">Tech Stack</p>
+        <p className="text-3xl items-center text-gray-500 pb-1">|</p>
       </div>
-      <div className="flex text-4xl gap-3">
+      <div className="flex text-4xl gap-5">
         <div className="hover:text-orange-400">
           <FaHtml5 />
         </div>

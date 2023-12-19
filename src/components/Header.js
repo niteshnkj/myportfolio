@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 
 const Header = () => {
   const el = useRef(null);
-
+  const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: ["Let's Talk..."],
@@ -16,6 +16,10 @@ const Header = () => {
       showCursor: true,
       cursorChar: "",
     });
+    //logic fr menu items in mobile devices
+    const toggleMenu = () => {
+      setShowMenu(!showMenu);
+    };
 
     // Destroying
     return () => {
@@ -24,23 +28,19 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex  justify-between w-full px-6 py-7 drop-shadow-lg shadow-xl font-semibold text-lg rounded sticky top-0 overflow-hidden z-10">
-      <div className="hover:text-orange-400 pt-1 font-extrabold text-2xl">
-        Nitesh.Dev
-      </div>
-      <ul className="flex  gap-8 list-none ">
-        <li className="hover:text-orange-400 hover:underline decoration-4 pt-2">
-          Home
-        </li>
-        <li className="hover:text-orange-400 hover:underline decoration-4 pt-2">
-          About
-        </li>
-        <li className="hover:text-orange-400 hover:underline decoration-4 pt-2">
-          Portfolio
-        </li>
-      </ul>
-      <div className="rounded-lg shadow-xl shadow-orange-200  bg-orange-500 text-white h-10 w-28 text-center items-center ">
-        <button className="pb-2" ref={el}></button>
+    <div className="flex justify-center items-center w-full h-20 drop-shadow-lg shadow-xl font-semibold text-lg rounded ">
+      <div className="flex justify-between items-center mx-24 w-full ">
+        <div className="hover:text-orange-400  font-extrabold text-3xl font-caveat hover:cursor-pointer">
+          Nitesh.Dev
+        </div>
+        <ul className="flex items-center justify-center gap-12 list-none hover:cursor-pointer">
+          <li className="hover:text-orange-400 decoration-4 ">Home</li>
+          <li className="hover:text-orange-400 decoration-4 ">About</li>
+          <li className="hover:text-orange-400 decoration-4 ">Portfolio</li>
+        </ul>
+        <div className="rounded-lg  hover:bg-orange-500 hover:text-white h-10 w-32 flex items-center justify-center">
+          <button ref={el}></button>
+        </div>
       </div>
     </div>
   );
