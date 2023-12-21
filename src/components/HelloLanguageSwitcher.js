@@ -5,7 +5,7 @@ import { PiHandWaving } from "react-icons/pi";
 const HelloLanguageSwitcher = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [greetingIndex, setGreetingIndex] = useState(0);
-  const greetings = ["Hello", "नमस्ते"]; // Add more greetings as needed
+  const greetings = ["Hello", "नमस्ते"]; 
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -13,8 +13,8 @@ const HelloLanguageSwitcher = () => {
       setIsVisible(true);
       setTimeout(() => {
         setIsVisible(false);
-      }, 2000);
-    }, 7000);
+      }, 1000);
+    }, 3000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -27,9 +27,9 @@ const HelloLanguageSwitcher = () => {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="flex font-kalam">
-        <h3>{greetings[greetingIndex]}</h3>
-        <span>{isHello ? <PiHandWaving /> : <LiaPrayingHandsSolid />}</span>
+      <div className="flex justify-center gap-3 font-kalam">
+        <h3 className="text-5xl lg:text-6xl ">{greetings[greetingIndex]}</h3>
+        <span className="text-4xl lg:text-5xl">{isHello ? <PiHandWaving /> : <LiaPrayingHandsSolid />}</span>
       </div>
     </div>
   );

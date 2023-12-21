@@ -26,13 +26,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: orangered;
+  background: #808080ca;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: orangered;
+  background: #808080ca;
 }
 p {
   font-family: "Mulish", sans-serif;

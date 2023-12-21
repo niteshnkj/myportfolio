@@ -9,11 +9,10 @@ const Banner = () => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "Nitesh Kumar Jha .",
-        "a Frontend Developer .",
-        "a Proud Indian .",
-      ], // Strings to display
-      // Speed settings, try diffrent values untill you get good results
+        "Nitesh Kumar Jha.",
+        "a Frontend Developer.",
+        "a Proud Indian.",
+      ],
       startDelay: 300,
       typeSpeed: 100,
       backSpeed: 120,
@@ -24,7 +23,6 @@ const Banner = () => {
       cursorChar: "|",
     });
 
-    // Destropying
     return () => {
       typed.destroy();
     };
@@ -32,15 +30,15 @@ const Banner = () => {
 
   return (
     <div className="flex justify-between items-center w-full h-[90vh]  bg-gray-100 ">
-      <div className="flex flex-col-reverse lg:flex-row justify-between items-center mx-4 lg:mx-44 w-full ">
-        <div className="flex flex-col justify-between gap-5 items-start font-semibold ">
-          <h1 className="text-6xl  font-kalam">
+      <div className="flex flex-col-reverse gap-4 lg:gap-0 lg:flex-row justify-between items-center  mx-4 lg:mx-44 w-[90%] lg:w-full ">
+        <div className="flex flex-col justify-between gap-5 items-center lg:items-start font-semibold ">
+          <h1 className=" font-kalam">
             <HelloLanguageSwitcher />
           </h1>
-          <h1 className="text-6xl  font-kalam">
+          <h1 className="text-4xl lg:text-6xl  font-kalam">
             I'm <span ref={el}></span>
           </h1>
-          <p className="text-xl  text-gray-400">
+          <p className="text-xl  text-gray-500">
             A passionate Frontend React Developer based in Madhubani, Bihar. 📍
           </p>
           <div className="flex gap-6 ">

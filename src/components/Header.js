@@ -28,7 +28,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center w-full h-20 drop-shadow-lg shadow-xl font-semibold text-lg rounded ">
+    <div className="flex justify-center items-center w-full h-20 drop-shadow-lg shadow-xl font-semibold text-lg rounded sticky top-0 left-0 z-10 bg-white ">
       <div className="flex justify-between items-center mx-24 w-full ">
         <div className="hover:text-orange-400  font-extrabold text-3xl font-caveat hover:cursor-pointer">
           Nitesh.Dev
@@ -38,7 +38,7 @@ const Header = () => {
           <li className="hover:text-orange-400 decoration-4 ">About</li>
           <li className="hover:text-orange-400 decoration-4 ">Portfolio</li>
         </ul>
-        <div className="rounded-lg  hover:bg-orange-500 hover:text-white h-10 w-32 flex items-center justify-center">
+        <div className="rounded-lg bg-orange-500 text-white h-10 w-32 flex items-center justify-center">
           <button ref={el}></button>
         </div>
       </div>
