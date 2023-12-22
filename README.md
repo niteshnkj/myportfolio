@@ -8,7 +8,9 @@
     - darkmode switch to be added to navbar .
  - About (done)
  - Portfolio (Pending)
- - Contact (structure done need some styling improvements && integrated email.js) 
+ - Contact (structure done need some styling improvements && integrated email.js)
+  - Need to fix submit button 
+  - Need validation
   - Progress Bar && error message(pending)
   - env file (not done)
  - Footer (need to add social links && flex box gap on both side to learn)
