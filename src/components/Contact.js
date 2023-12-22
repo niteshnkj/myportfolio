@@ -64,46 +64,63 @@ const Contact = () => {
       case "name":
         return "Your Name";
       case "email":
-        return "Your Email";
+        return "Your Email or Phone Number";
       case "message":
-        return "Your Message";
+        return "Write a message below Message";
       default:
         return "";
     }
   };
 
   return (
-    <form className="flex px-60 py-6" ref={form} onSubmit={handleSubmit}>
-      <h1>Get In Touch</h1>
-      {currentField === "" ? (
-        <p className="text-5xl font-semibold text-center text-orange-400">
-          Thank You! I'll contact you soon!
-        </p>
-      ) : (
-        <div className="flex flex-col w-full">
-          <label htmlFor="inputValue" className="">
-            {getLabelForField()}
-          </label>
-          <div className="flex">
-            <input
-              type="text"
-              name="inputValue"
-              placeholder={`Enter ${
-                currentField.charAt(0).toUpperCase() + currentField.slice(1)
-              }`}
-              className="w-full h-12 border-black border-2 rounded-md"
-              value={inputValue}
-              onChange={handleChange}
-            />
-            {showButton && (
-              <button type="submit" className="">
-                <FaArrowRight />
-              </button>
-            )}
-          </div>
+    //
+    <div className="flex justify-center items-center w-full h-[60vh]  bg-white">
+      <div className="flex flex-col items-center w-[80%] gap-14 ">
+        <div className="flex flex-col items-center justify-center gap-4">
+          <h1 className="text-3xl lg:text-5xl text-orange-400 ">
+            Get In Touch
+          </h1>
+          <p className="text-lg lg:text-2xl text-gray-500">
+            I am always excited to work on some awesome projects, ping me and
+            let's discuss over message.
+          </p>
         </div>
-      )}
-    </form>
+        <form className="w-full" ref={form} onSubmit={handleSubmit}>
+          {currentField === "" ? (
+            <p className="text:3xl lg:text-5xl font-semibold text-center text-orange-400">
+              Thank You! I'll contact you soon!
+            </p>
+          ) : (
+            <div className="flex flex-col gap-1">
+              <div className="flex justify-center items-start">
+                <p className="text-2xl  text-slate-600 w-[85%] flex items-start ">
+                  {getLabelForField()}
+                </p>
+              </div>
+              <div className="flex justify-center items-start">
+                <input
+                  type="text"
+                  name="inputValue"
+                  // placeholder={`Enter ${
+                  //   currentField.charAt(0).toUpperCase() + currentField.slice(1)
+                  // }`}
+                  className="w-[80%] h-[60px] bg-slate-300 mr-0 focus:outline-none py-1 px-2 text-lg"
+                  value={inputValue}
+                  onChange={handleChange}
+                />
+
+                <button
+                  type="submit"
+                  className="w-[5%] bg-slate-300 h-[60px] ml-0 flex justify-center items-center py-1 text-xl text-slate-600  font-extrabold"
+                >
+                  {showButton && <FaArrowRight className="w-[90%] h-[90%]" />}
+                </button>
+              </div>
+            </div>
+          )}
+        </form>
+      </div>
+    </div>
   );
 };
 

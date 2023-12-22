@@ -29,7 +29,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center w-full h-[90vh]  bg-gray-100 ">
+    <div className="flex justify-between items-center w-full h-auto lg:h-[90vh]  bg-gray-100 ">
       <div className="flex flex-col-reverse gap-4 lg:gap-0 lg:flex-row justify-between items-center  mx-4 lg:mx-44 w-[90%] lg:w-full ">
         <div className="flex flex-col justify-between gap-5 items-center lg:items-start font-semibold ">
           <h1 className=" font-kalam">
@@ -48,7 +48,7 @@ const Banner = () => {
             </button>
           </div> */}
             <div>
-              <button className="rounded-lg   bg-orange-500 text-white font-semibold h-10 w-28 text-center items-center ">
+              <button className="rounded-lg bg-orange-500 text-white font-semibold h-10 w-28 text-center items-center ">
                 Download CV
               </button>
             </div>

@@ -6,7 +6,8 @@ module.exports = {
       fontFamily: {
         kalam: ["Kalam", "cursive"],
         caveat: ["Caveat", "cursive"],
-        mulish:['Mulish', "sans-serif"],
+        mulish: ["Mulish", "sans-serif"],
+        sacramento: ["Sacramento", "cursive"],
       },
     },
   },

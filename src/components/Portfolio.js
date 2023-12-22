@@ -3,7 +3,7 @@ import PortfolioCard from "./PortfolioCard";
 
 const Portfolio = () => {
   return (
-    <div className="min-w-full h-44 px-60 pt-6  bg-gray-200 shadow-lg rounded-lg ">
+    <div className="min-w-full h-[90vh] px-60 pt-6  bg-gray-500 shadow-lg rounded-lg ">
       <div>
         <h1 className="text-orange-400 text-2xl font-bold">MY PORTFOLIO</h1>
         <h2 className="font-semibold text-3xl">
