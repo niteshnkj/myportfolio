@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import TechStcak from "./TechStack";
+import TechStack from "./TechStack";
 import HelloLanguageSwitcher from "./HelloLanguageSwitcher";
 
 const Banner = () => {
@@ -35,7 +35,7 @@ const Banner = () => {
           <h1 className=" font-kalam">
             <HelloLanguageSwitcher />
           </h1>
-          <h1 className="text-4xl lg:text-6xl  font-kalam">
+          <h1 className="text-2xl lg:text-6xl  font-kalam">
             I'm <span ref={el}></span>
           </h1>
           <p className="text-xl  text-gray-500">
@@ -54,7 +54,7 @@ const Banner = () => {
             </div>
           </div>
           <div>
-            <TechStcak />
+            <TechStack />
           </div>
         </div>
         <div className="h-[280px] w-[280px] text-center  ">

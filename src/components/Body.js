@@ -32,7 +32,7 @@ const Body = () => {
     <Header />
     <Banner />
     <About />
-    {/* <Portfolio /> */}
+    <Portfolio />
     <Contact />
     <Footer />
   </>

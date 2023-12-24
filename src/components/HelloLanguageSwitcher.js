@@ -28,8 +28,8 @@ const HelloLanguageSwitcher = () => {
       }`}
     >
       <div className="flex justify-center gap-3 font-kalam">
-        <h3 className="text-5xl lg:text-6xl ">{greetings[greetingIndex]}</h3>
-        <span className="text-4xl lg:text-5xl">{isHello ? <PiHandWaving /> : <LiaPrayingHandsSolid />}</span>
+        <h3 className="text-4xl lg:text-6xl ">{greetings[greetingIndex]}</h3>
+        <span className="text-3xl lg:text-5xl">{isHello ? <PiHandWaving /> : <LiaPrayingHandsSolid />}</span>
       </div>
     </div>
   );

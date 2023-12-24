@@ -8,6 +8,8 @@ module.exports = {
         caveat: ["Caveat", "cursive"],
         mulish: ["Mulish", "sans-serif"],
         sacramento: ["Sacramento", "cursive"],
+        jost: ["Jost", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

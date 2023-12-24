@@ -75,10 +75,11 @@ const Contact = () => {
   return (
     //
     <div className="flex justify-center items-center w-full h-[60vh]  bg-white">
-      <div className="flex flex-col items-center w-[80%] gap-14 ">
+      <div className="flex flex-col items-center w-[90%] lg:w-[80%] gap-14 ">
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="text-3xl lg:text-5xl text-orange-400 ">
-            Get In Touch
+          <h1 className="text-2xl lg:text-3xl text-orange-400 font-bold">
+          {/* text-orange-400 text-2xl font-bold */}
+            GET IN TOUCH
           </h1>
           <p className="text-lg lg:text-2xl text-gray-500">
             I am always excited to work on some awesome projects, ping me and
@@ -87,13 +88,13 @@ const Contact = () => {
         </div>
         <form className="w-full" ref={form} onSubmit={handleSubmit}>
           {currentField === "" ? (
-            <p className="text:3xl lg:text-5xl font-semibold text-center text-orange-400">
+            <p className="text:4xl lg:text-5xl font-semibold text-center text-orange-400">
               Thank You! I'll contact you soon!
             </p>
           ) : (
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               <div className="flex justify-center items-start">
-                <p className="text-2xl  text-slate-600 w-[85%] flex items-start ">
+                <p className="text-2xl  text-slate-600 w-[90%] lg:w-[85%] flex items-start ">
                   {getLabelForField()}
                 </p>
               </div>
@@ -104,7 +105,7 @@ const Contact = () => {
                   // placeholder={`Enter ${
                   //   currentField.charAt(0).toUpperCase() + currentField.slice(1)
                   // }`}
-                  className="w-[80%] h-[60px] bg-slate-300 mr-0 focus:outline-none py-1 px-2 text-lg"
+                  className="w-[90%] lg:w-[80%] h-[60px] bg-slate-300 mr-0 focus:outline-none py-1 px-2 text-lg"
                   value={inputValue}
                   onChange={handleChange}
                 />
