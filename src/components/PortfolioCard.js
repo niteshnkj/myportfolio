@@ -2,8 +2,14 @@ import { RiGithubLine } from "react-icons/ri";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const PortfolioCard = () => {
+  const handleMouseEnter = () => {
+    window.scrollBy({
+      top: -100, // Adjust the scroll distance as needed
+      behavior: 'smooth',
+    });
+  };
   return (
-    <div className="flex justify-between items-center w-[80%]  rounded-xl shadow-xl bg-white font-[500]">
+    <div className="flex even:flex-row-reverse justify-between items-center w-[80%]  rounded-xl shadow-xl bg-white font-[500]">
       <div className="flex flex-col justify-center items-center gap-4  h-full w-[40%]">
         <h2 className="font-semibold text-xl">NETFLIXGPT</h2>
         <p className="font-poppins text-gray-500">
@@ -13,12 +19,12 @@ const PortfolioCard = () => {
           seamless functionality.
         </p>
         <div className="flex justify-between gap-2">
-          <p className="border shadow-lg font-poppins ">React</p>
-          <p className="border shadow-lg font-poppins">Firebase</p>
+          <p className="border shadow-xl font-poppins bg-white text-center rounded-md p-2">React</p>
+          <p className="border shadow-xl font-poppins bg-white text-center rounded-md p-2">Firebase</p>
         </div>
         <div className="flex gap-2 h-12">
           <div className="flex">
-            <p className="flext items-center font-poppins">
+            <p className="flex items-center font-poppins">
               Github
               <span>
                 <RiGithubLine />
@@ -41,6 +47,7 @@ const PortfolioCard = () => {
             src="https://img.freepik.com/free-vector/hand-drawn-web-developers_23-2148819604.jpg?w=1060&t=st=1702576648~exp=1702577248~hmac=aa956481af4cc08e1f7600cf78b778bd6d70f547a46ddf2dba61693207cf363c"
             alt="frontendimg"
             className="w-[90%] h-[90%] m-2"
+            // onMouseEnter={handleMouseEnter}
           />
         </div>
       </div>
