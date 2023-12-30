@@ -9,7 +9,7 @@ const PortfolioCard = () => {
     });
   };
   return (
-    <div className="flex even:flex-row-reverse justify-between items-center w-[80%]  rounded-xl shadow-xl bg-white font-[500]">
+    <div className="flex flex-col-reverse lg:flex-row lg:even:flex-row-reverse justify-between items-center w-[90%] lg:w-[80%]  rounded-xl shadow-xl bg-white font-[500]">
       <div className="flex flex-col justify-center items-center gap-4  h-full w-[40%]">
         <h2 className="font-semibold text-xl">NETFLIXGPT</h2>
         <p className="font-poppins text-gray-500">
@@ -22,12 +22,12 @@ const PortfolioCard = () => {
           <p className="border shadow-xl font-poppins bg-white text-center rounded-md p-2">React</p>
           <p className="border shadow-xl font-poppins bg-white text-center rounded-md p-2">Firebase</p>
         </div>
-        <div className="flex gap-2 h-12">
+        <div className="flex gap-4 h-12">
           <div className="flex">
             <p className="flex items-center font-poppins">
               Github
               <span>
-                <RiGithubLine />
+                <RiGithubLine className="cursor-pointer text-base"/>
               </span>
             </p>
           </div>
@@ -35,7 +35,7 @@ const PortfolioCard = () => {
             <p className="font-poppins flex items-center">
               Live Demo
               <span>
-                <FaExternalLinkAlt />
+                <FaExternalLinkAlt className="cursor-pointer text-base"/>
               </span>
             </p>
           </div>

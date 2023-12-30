@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import TechStack from "./TechStack";
 import HelloLanguageSwitcher from "./HelloLanguageSwitcher";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Banner = () => {
   const el = useRef(null);
@@ -48,20 +50,42 @@ const Banner = () => {
             </button>
           </div> */}
             <div>
-              <button className="rounded-lg bg-orange-500 text-white font-semibold h-10 w-28 text-center items-center ">
-                Download CV
-              </button>
+              <a
+                href="https://drive.google.com/file/d/1h4njgqwk9PAzwuJX8YQdeJCfIlz4ip7H/view"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="rounded-lg bg-orange-500 text-white font-semibold h-10 w-28 text-center items-center ">
+                  Download CV
+                </button>
+              </a>
             </div>
+          </div>
+          <div className="flex text-center justify-center gap-2 cursor-pointer text-4xl">
+            <a
+              href="https://www.linkedin.com/in/nitesh-kumar-j-0347b0b7/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="hover:text-[#287bbc]" />
+            </a>
+            <a
+              href="https://github.com/niteshnkj"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub className=" hover:fill-white hover:bg-black hover:rounded-full hover:border-white" />
+            </a>
           </div>
           <div>
             <TechStack />
           </div>
         </div>
-        <div className="h-[280px] w-[280px] text-center  ">
+        <div className="h-[30%] w-[30%] text-center  ">
           <img
-            src="https://i.pinimg.com/originals/ef/d3/99/efd39933244be03953f3ab82a49c161a.jpg"
+            src="https://res.cloudinary.com/do9s5cxxl/image/upload/v1703925295/Portfolio/bannerimg.png"
             alt="avatar_Image"
-            className=" rounded-[100%] h-full w-full"
+            className=" rounded-[100%] h-full w-full shadow-2xl "
           />
         </div>
       </div>

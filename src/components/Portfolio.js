@@ -10,7 +10,7 @@ const Portfolio = () => {
           Each project is a unique piece of development 🧩
         </h2>
       </div>
-      <div className="w-[80%] flex flex-col items-center justify-center py-10 gap-10 rounded bg-gray-100 mb-20">
+      <div className="w-[80%] flex flex-col items-center justify-center py-10 gap-20 rounded bg-gray-100 mb-20">
         <PortfolioCard />
         <PortfolioCard />
         <PortfolioCard />
