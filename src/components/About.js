@@ -1,14 +1,13 @@
 import React from "react";
-
 const About = () => {
   return (
     <div className="flex justify-between items-center w-full h-auto lg:h-[90vh] bg-white">
       <div className="flex flex-col lg:flex-row mx-4 lg:mx-44  justify-between items-center lg:items-start">
         <div className=" h-full w-[90%] lg:w-1/2 ">
           <img
-            src="https://img.freepik.com/free-vector/hand-drawn-web-developers_23-2148819604.jpg?w=1060&t=st=1702576648~exp=1702577248~hmac=aa956481af4cc08e1f7600cf78b778bd6d70f547a46ddf2dba61693207cf363c"
+            src="https://res.cloudinary.com/do9s5cxxl/image/upload/v1703978104/Portfolio/about_pic_lnpg0j.png"
             alt="frontendimg"
-            className="flex justify-center items-center p-6 rounded-[2rem]"
+            className="flex justify-center items-center h-full px-6 py-12 rounded-[2rem]"
           />
         </div>
         <div className="flex flex-col items-center lg:items-start gap-1 w-[90%] lg:w-1/2 h-full p-6">

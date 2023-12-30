@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaArrowRight } from "react-icons/fa";
-
+import { MdError } from "react-icons/md";
 const Contact = () => {
   const [inputValue, setInputValue] = useState("");
   const [currentField, setCurrentField] = useState("name");
@@ -14,7 +14,7 @@ const Contact = () => {
     const value = e.target.value;
     setInputValue(value);
     setShowButton(value.trim() !== "");
-    setError(""); // Clear the error when the input changes
+    setError(""); 
   };
 
   const handleSubmit = (e) => {
@@ -85,7 +85,7 @@ const Contact = () => {
   };
 
   const progressBarStyle = {
-    width: `${(progress / 3) * 100}%`, // Assuming you have 3 steps
+    width: `${(progress / 3) * 100}%`, 
   };
 
   // Validation function using regex
@@ -103,7 +103,7 @@ const Contact = () => {
       case "email":
         isValid = emailRegex.test(inputValue);
         break;
-      // Add more cases for additional fields if needed
+
       default:
         break;
     }
@@ -136,7 +136,7 @@ const Contact = () => {
               </p>
             </div>
           ) : (
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col justify-center gap-0">
               <div className="flex justify-center items-start">
                 <p className="text-2xl text-slate-600 w-[90%] lg:w-[85%] flex items-start ">
                   {getLabelForField()}
@@ -157,16 +157,26 @@ const Contact = () => {
                   {showButton && <FaArrowRight className="w-[90%] h-[90%]" />}
                 </button>
               </div>
-              <div className="flext h-2 justify-center items-start ">
-                <div
-                  className="h-full w-full bg-orange-400 transition-width"
-                  style={progressBarStyle}
-                />
-                <div className="flex justify-between items-center ">
-                  <div className="text-red-500 text-md w-[85%]">
-                    {error && <p className="">{error}</p>}
+              <div className="flex justify-center items-start">
+                <div className="w-[90%] lg:w-[85%] flex items-start h-2  bg-gray-400 ">
+                  <div
+                    className="h-full w-full bg-green-600"
+                    style={progressBarStyle}
+                  />
+                </div>
+              </div>
+              <div className="flex justify-center items-start">
+                <div className="w-[90%] lg:w-[85%] flex items-start justify-between">
+                  <div className="text-gray-500 text-lg w-[85%]">
+                    {error && (
+                      <p className="flex gap-1">
+                        <span>
+                          <MdError className="" />
+                        </span>
+                        {error}
+                      </p>
+                    )}
                   </div>
-
                   <p className="text-lg text-gray-500 text-md">{`${progress}/3`}</p>
                 </div>
               </div>

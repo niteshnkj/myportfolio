@@ -1,33 +1,34 @@
 import { RiGithubLine } from "react-icons/ri";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-const PortfolioCard = () => {
+const PortfolioCard = ({ cardData }) => {
   const handleMouseEnter = () => {
     window.scrollBy({
-      top: -100, // Adjust the scroll distance as needed
+      top: -100, 
       behavior: 'smooth',
     });
   };
+
   return (
     <div className="flex flex-col-reverse lg:flex-row lg:even:flex-row-reverse justify-between items-center w-[90%] lg:w-[80%]  rounded-xl shadow-xl bg-white font-[500]">
       <div className="flex flex-col justify-center items-center gap-4  h-full w-[40%]">
-        <h2 className="font-semibold text-xl">NETFLIXGPT</h2>
-        <p className="font-poppins text-gray-500">
-          NetflixGpt, a cutting edge Netflix clone featuring GPT-powered search,
-          a secure Firebase backend, and curated movie categories. Elevate your
-          entertainment experience with the perfect blend of innovation and
-          seamless functionality.
-        </p>
+        <h2 className="font-semibold text-xl">{cardData.name}</h2>
+        <p className="font-poppins text-gray-500">{cardData.description}</p>
         <div className="flex justify-between gap-2">
-          <p className="border shadow-xl font-poppins bg-white text-center rounded-md p-2">React</p>
-          <p className="border shadow-xl font-poppins bg-white text-center rounded-md p-2">Firebase</p>
+          {cardData.techStack.map((tech, index) => (
+            <p key={index} className="border shadow-xl font-poppins bg-white text-center rounded-md p-2">
+              {tech}
+            </p>
+          ))}
         </div>
         <div className="flex gap-4 h-12">
           <div className="flex">
             <p className="flex items-center font-poppins">
               Github
               <span>
-                <RiGithubLine className="cursor-pointer text-base"/>
+                <a href={cardData.DemoLink[0]} target="_blank" rel="noopener noreferrer">
+                  <RiGithubLine className="cursor-pointer text-base" />
+                </a>
               </span>
             </p>
           </div>
@@ -35,18 +36,20 @@ const PortfolioCard = () => {
             <p className="font-poppins flex items-center">
               Live Demo
               <span>
-                <FaExternalLinkAlt className="cursor-pointer text-base"/>
+                <a href={cardData.DemoLink[1]} target="_blank" rel="noopener noreferrer">
+                  <FaExternalLinkAlt className="cursor-pointer text-base" />
+                </a>
               </span>
             </p>
           </div>
         </div>
       </div>
       <div className="h-full w-[60%] rounded-xl shadow-2xl my-8 mx-8 ">
-        <div className="flex justify-center items-center  ">
+        <div className="flex justify-center items-center rounded-xl  ">
           <img
-            src="https://img.freepik.com/free-vector/hand-drawn-web-developers_23-2148819604.jpg?w=1060&t=st=1702576648~exp=1702577248~hmac=aa956481af4cc08e1f7600cf78b778bd6d70f547a46ddf2dba61693207cf363c"
+            src={cardData.imageUrl}
             alt="frontendimg"
-            className="w-[90%] h-[90%] m-2"
+            className="w-full  h-[90%] rounded-xl"
             // onMouseEnter={handleMouseEnter}
           />
         </div>
