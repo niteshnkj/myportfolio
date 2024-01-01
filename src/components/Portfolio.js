@@ -19,7 +19,7 @@ const Portfolio = () => {
       {
         id: 2,
         name: "Card2",
-        description: "Description for Card2",
+        description: "Description for Card2 ka",
         imageUrl: "url2.jpg",
         techStack: ["Mobile App", "React Native"],
         DemoLink: ["https://demo2a.com", "https://demo2b.com"],
