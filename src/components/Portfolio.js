@@ -9,7 +9,7 @@ const Portfolio = () => {
         name: "NETFLIXGPT",
         description:
           "NetflixGpt, a cutting edge Netflix clone featuring GPT-powered search, a secure Firebase backend, and curated movie categories. Elevate your entertainment experience with the perfect blend of innovation and seamless functionality. ",
-        imageUrl: "url1.jpg",
+        imageUrl: "https://res.cloudinary.com/do9s5cxxl/image/upload/v1704211290/Portfolio/NetflixGPT_rbueuo.png",
         techStack: ["React", "Firebase"],
         DemoLink: [
           "https://github.com/niteshnkj/netflixGPT",
@@ -24,22 +24,22 @@ const Portfolio = () => {
         techStack: ["Mobile App", "React Native"],
         DemoLink: ["https://demo2a.com", "https://demo2b.com"],
       },
-      {
-        id: 3,
-        name: "Card3",
-        description: "Description for Card3",
-        imageUrl: "url3.jpg",
-        techStack: ["Data Science", "Python"],
-        DemoLink: ["https://demo3a.com", "https://demo3b.com"],
-      },
-      {
-        id: 4,
-        name: "Card4",
-        description: "Description for Card4",
-        imageUrl: "url4.jpg",
-        techStack: ["UI/UX Design", "Figma"],
-        DemoLink: ["https://demo4a.com", "https://demo4b.com"],
-      },
+      // {
+      //   id: 3,
+      //   name: "Card3",
+      //   description: "Description for Card3",
+      //   imageUrl: "url3.jpg",
+      //   techStack: ["Data Science", "Python"],
+      //   DemoLink: ["https://demo3a.com", "https://demo3b.com"],
+      // },
+      // {
+      //   id: 4,
+      //   name: "Card4",
+      //   description: "Description for Card4",
+      //   imageUrl: "url4.jpg",
+      //   techStack: ["UI/UX Design", "Figma"],
+      //   DemoLink: ["https://demo4a.com", "https://demo4b.com"],
+      // },
     ],
   };
 

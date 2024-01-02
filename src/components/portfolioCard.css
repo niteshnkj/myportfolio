@@ -1,0 +1,14 @@
+.portfolio-image {
+    transition: transform 3.0s ease-in-out;
+  }
+  
+  .hover-container:hover .hover-upward {
+    transform: translateY(-83%);
+  }
+  
+  .image-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
