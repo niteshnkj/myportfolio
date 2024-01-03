@@ -59,8 +59,8 @@ const Contact = () => {
         )
         .then(
           function (response) {
-            console.log("Email sent!", response.status, response.text);
-            console.log(formData);
+            // console.log("Email sent!", response.status, response.text);
+            // console.log(formData);
             alert("Email sent successfully!");
           },
           function (error) {
