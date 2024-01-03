@@ -25,10 +25,14 @@ const TechStack = () => {
       </div>
       <div className="flex relative text-2xl lg:text-4xl gap-0 lg:gap-5">
         {iconData.map((item, index) => (
-          <div key={index} className=" group group-hover:hover:fill-orange-400 relative">
+          <div
+            key={index}
+            className="relative group hover:text-orange-400"
+          >
             {item.icon}
-            <div className="absolute -top-6 w-full text-sm left-0 right-0 bg-white text-black text-center opacity-0 transition-opacity group-hover:opacity-100">
+            <div className="absolute m-0 -top-12 z-10 left-1/2 transform -translate-x-1/2 bg-orange-300 text-black text-center text-sm p-2 rounded-md  opacity-0 transition-opacity group-hover:opacity-100">
               {item.name}
+              <div className="absolute w-0 h-0 m-0 border-t-8 border-l-4 border-r-4 border-l-transparent border-r-transparent border-solid border-orange-300 bg-transparent  bottom-[-8px] left-1/2 transform -translate-x-1/2"></div>
             </div>
           </div>
         ))}

@@ -2,8 +2,6 @@ import React from "react";
 import { FaInstagram, FaLinkedin, FaGithub, FaHeart } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { FaRegCopyright } from "react-icons/fa";
-import footerImg from "../Assets/footer3.png";
-
 const Footer = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-2 lg:gap-0 h-auto lg:h-[40vh] mb-0 w-full bg-white">
@@ -74,7 +72,11 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <img src={footerImg} alt="footerimage" className="w-full" />
+        <img
+          src="https://res.cloudinary.com/do9s5cxxl/image/upload/v1704235393/Portfolio/footer3_a7jtfc.png"
+          alt="footerimage"
+          className="w-full"
+        />
       </div>
     </div>
   );

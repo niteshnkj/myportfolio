@@ -1,14 +1,22 @@
-// PortfolioCard.jsx
-
-import React from "react";
+import React, { useState } from "react";
 import { RiGithubLine } from "react-icons/ri";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import "./portfolioCard.css";
 
 const PortfolioCard = ({ cardData }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = () => {
+    setIsHovered(true);
+  };
+
+  const handleHoverOut = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div className="portfolio-card flex flex-col-reverse lg:flex-row lg:even:flex-row-reverse justify-between items-center w-[90%] lg:w-[80%] rounded-xl shadow-xl bg-white font-[500]">
-      <div className="flex flex-col justify-center items-center gap-4 h-full w-[40%]">
+      <div className="flex flex-col justify-center items-center gap-4 my-8 mx-8 h-full w-[40%]">
         <h2 className="font-semibold text-xl">{cardData.name}</h2>
         <p className="font-poppins text-gray-500">{cardData.description}</p>
         <div className="flex justify-between gap-2">
@@ -21,7 +29,7 @@ const PortfolioCard = ({ cardData }) => {
             </p>
           ))}
         </div>
-        <div className="flex gap-4 h-12">
+        <div className="flex h-12 gap-3">
           <div className="flex">
             <p className="flex items-center font-poppins">
               Github
@@ -52,12 +60,20 @@ const PortfolioCard = ({ cardData }) => {
           </div>
         </div>
       </div>
-      <div className="hover-container h-72 w-[60%] shadow-2xl my-8 mx-8">
-        <div className="image-wrapper flex justify-center items-center rounded-xl overflow-hidden border-black border">
+      <div
+        className={`hover-container h-72 w-[60%] rounded-lg shadow-2xl my-8 mx-8 ${
+          isHovered ? "hovered" : ""
+        }`}
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHoverOut}
+      >
+        <div className="bg-white relative rounded-xl h-72 overflow-hidden">
           <img
             src={cardData.imageUrl}
             alt="frontendimg"
-            className="portfolio-image w-full h-full object-cover rounded-xl hover-upward"
+            className={`portfolio-image m-0 absolute w-full h-max rounded-xl hover-upward transition-transform ${
+              isHovered ? `-translate-y-3/4` : ""
+            }`}
           />
         </div>
       </div>

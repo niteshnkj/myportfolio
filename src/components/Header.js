@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -38,10 +39,27 @@ const Header = () => {
         >
           {/* Responsive menu */}
           <ul className="lg:flex items-center justify-center gap-12 list-none ">
-            <li className="hover:text-orange-400 decoration-4">Home</li>
-            <li className="hover:text-orange-400 decoration-4">About</li>
-            <li className="hover:text-orange-400 decoration-4">Portfolio</li>
-            <li className="hover:text-orange-400 decoration-4">Lets Talk...</li>
+            <li className="hover:text-orange-400 decoration-4">
+              <NavLink to={"/"} exact activeClassName="active">
+                Home
+              </NavLink>
+            </li>
+            <li className="hover:text-orange-400 decoration-4">
+              <NavLink to={"/about"} activeClassName="active">
+                About
+              </NavLink>
+            </li>
+            <li className="hover:text-orange-400 decoration-4">
+              <NavLink to={"portfolio"} activeClassName="active">
+                Portfolio
+              </NavLink>
+            </li>
+
+            <li className="hover:text-orange-400 decoration-4">
+              <NavLink to={"/contact"} activeClassName="active"s>
+                Lets Talk...
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

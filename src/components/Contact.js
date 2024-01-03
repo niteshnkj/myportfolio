@@ -2,8 +2,13 @@ import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaArrowRight } from "react-icons/fa";
 import { MdError } from "react-icons/md";
+
 const Contact = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [currentField, setCurrentField] = useState("name");
   const [showButton, setShowButton] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -12,63 +17,58 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    setInputValue(value);
+    setFormData((prevData) => ({ ...prevData, [currentField]: value }));
     setShowButton(value.trim() !== "");
-    setError(""); 
+    setError("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate input fields before submission
     if (!validateInput()) {
-      // Handle invalid input
       return;
     }
-
-    // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your actual Email.js credentials
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(
-        (result) => {
-          console.log("Email sent successfully:", result.text);
-        },
-        (error) => {
-          console.log("Email failed to send:", error.text);
-        }
-      );
-
-    // Add your logic here to handle the values based on the current field
-    console.log(
-      `${currentField.charAt(0).toUpperCase() + currentField.slice(1)}:`,
-      inputValue
-    );
 
     // Switch to the next input field
     switch (currentField) {
       case "name":
         setCurrentField("email");
-        setInputValue("");
         break;
       case "email":
         setCurrentField("message");
-        setInputValue("");
         break;
       case "message":
         setCurrentField("");
-        setInputValue("");
         break;
       default:
         break;
     }
 
     setProgress((prevProgress) => prevProgress + 1);
-    setShowButton(false); // Hide the button after submission
+    setShowButton(false);
+
+    // If all steps are completed, send the email
+    if (progress === 2) {
+      // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your actual Email.js credentials
+      emailjs
+        .sendForm(
+          "service_ddewwua",
+          "template_5lvw538",
+          form.current,
+          "L2REWnNDLWVq7M6bi"
+        )
+        .then(
+          function (response) {
+            console.log("Email sent!", response.status, response.text);
+            console.log(formData);
+            alert("Email sent successfully!");
+          },
+          function (error) {
+            console.error("Error sending email:", error);
+            alert("Oops! Something went wrong.");
+          }
+        );
+    }
   };
 
   const getLabelForField = () => {
@@ -85,10 +85,9 @@ const Contact = () => {
   };
 
   const progressBarStyle = {
-    width: `${(progress / 3) * 100}%`, 
+    width: `${(progress / 3) * 100}%`,
   };
 
-  // Validation function using regex
   const validateInput = () => {
     let isValid = true;
 
@@ -98,18 +97,18 @@ const Contact = () => {
 
     switch (currentField) {
       case "name":
-        isValid = nameRegex.test(inputValue);
+        isValid = nameRegex.test(formData.name);
         break;
       case "email":
-        isValid = emailRegex.test(inputValue);
+        isValid = emailRegex.test(formData.email);
         break;
-
+      case "message":
+        break;
       default:
         break;
     }
 
     if (!isValid) {
-      // Handle invalid input and set the error message
       setError(`Enter a valid ${currentField}`);
     }
 
@@ -118,7 +117,7 @@ const Contact = () => {
 
   return (
     <div className="flex justify-center items-center w-full h-[60vh] bg-white">
-      <div className="flex flex-col items-center w-[90%] lg:w-[80%] gap-14 ">
+      <div className="flex flex-col items-center w-[90%] lg:w-[80%] gap-14">
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="text-2xl lg:text-3xl text-orange-400 font-bold">
             GET IN TOUCH
@@ -138,16 +137,16 @@ const Contact = () => {
           ) : (
             <div className="flex flex-col justify-center gap-0">
               <div className="flex justify-center items-start">
-                <p className="text-2xl text-slate-600 w-[90%] lg:w-[85%] flex items-start ">
+                <p className="text-2xl text-slate-600 w-[90%] lg:w-[85%] flex items-start">
                   {getLabelForField()}
                 </p>
               </div>
               <div className="flex justify-center items-start">
                 <input
                   type="text"
-                  name="inputValue"
+                  name={currentField}
                   className="w-[90%] lg:w-[80%] h-[60px] bg-slate-300 mr-0 focus:outline-none py-1 px-2 text-lg"
-                  value={inputValue}
+                  value={formData[currentField]}
                   onChange={handleChange}
                 />
                 <button
