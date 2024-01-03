@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
+// import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -13,12 +15,24 @@ const Header = () => {
     setShowMenu(false);
   };
 
+  const goTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="flex justify-center items-center w-full h-20 drop-shadow-lg shadow-xl font-semibold text-lg rounded sticky top-0 left-0 z-10 bg-white">
       <div className="flex justify-between items-end lg:items-center mx-6 lg:mx-24 w-full">
-        <div className="hover:text-orange-400 font-extrabold text-3xl font-caveat hover:cursor-pointer">
-          Nitesh.Dev
-        </div>
+        <NavLink>
+          <div
+            className="hover:text-orange-400 font-extrabold text-3xl font-caveat hover:cursor-pointer "
+            onClick={goTop}
+          >
+            Nitesh.Dev
+          </div>
+        </NavLink>
 
         {/* Hamburger icon for mobile screens */}
         <div className="lg:hidden cursor-pointer">
@@ -29,7 +43,7 @@ const Header = () => {
           )}
         </div>
 
-        {/* Container for button and menu */}
+       
         <div
           className={`lg:flex items-center justify-center gap-1 lg:gap-12 list-none ${
             showMenu
@@ -37,28 +51,56 @@ const Header = () => {
               : "hidden"
           }`}
         >
-          {/* Responsive menu */}
-          <ul className="lg:flex items-center justify-center gap-12 list-none ">
+          <ul className="lg:flex items-center justify-center gap-12 list-none hover:cursor-pointer">
             <li className="hover:text-orange-400 decoration-4">
-              <NavLink to={"/"} exact activeClassName="active">
+              <Link
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                exact
+                activeClassName="active"
+              >
                 Home
-              </NavLink>
+              </Link>
             </li>
             <li className="hover:text-orange-400 decoration-4">
-              <NavLink to={"/about"} activeClassName="active">
+              <Link
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70} 
+                duration={500}
+                activeClassName="active"
+              >
                 About
-              </NavLink>
+              </Link>
             </li>
             <li className="hover:text-orange-400 decoration-4">
-              <NavLink to={"portfolio"} activeClassName="active">
+              <Link
+                to="portfolio"
+                spy={true}
+                smooth={true}
+                offset={-70} 
+                duration={500}
+                activeClassName="active"
+              >
                 Portfolio
-              </NavLink>
+              </Link>
             </li>
 
             <li className="hover:text-orange-400 decoration-4">
-              <NavLink to={"/contact"} activeClassName="active"s>
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70} 
+                duration={500}
+                activeClassName="active"
+              >
                 Lets Talk...
-              </NavLink>
+              </Link>
             </li>
           </ul>
         </div>

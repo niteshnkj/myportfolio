@@ -46,12 +46,11 @@
 }
 p {
   font-family: "Mulish", sans-serif;
-  line-height: 1.2rem;
+  /* line-height: 1.2rem; */
 }
 .active {
-  color: #dc892a;
   text-decoration-line: underline;
-  text-decoration-color: #dc892a;
+  text-decoration-color: rgb(251 146 60);
 }
 /* @layer base {
   html {

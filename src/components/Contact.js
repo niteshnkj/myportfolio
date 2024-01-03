@@ -52,10 +52,10 @@ const Contact = () => {
       // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your actual Email.js credentials
       emailjs
         .sendForm(
-          "service_ddewwua",
-          "template_5lvw538",
+          process.env.REACT_APP_SERVICE_ID,
+          process.env.REACT_APP_TEMPLATE_ID,
           form.current,
-          "L2REWnNDLWVq7M6bi"
+          process.env.REACT_APP_PUBLIC_KEY
         )
         .then(
           function (response) {
@@ -116,7 +116,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full h-[60vh] bg-white">
+    <div className="flex justify-center items-center w-full h-[60vh] bg-white" id="contact">
       <div className="flex flex-col items-center w-[90%] lg:w-[80%] gap-14">
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="text-2xl lg:text-3xl text-orange-400 font-bold">

@@ -5,15 +5,15 @@
     -need to add linkedin and github links(done)
     - added multilanguage greeting text.
     - Download cv(done).
-    - TechStack (need some improvements in css for icons).
+    - TechStack (need some improvements in css for icons done).
  - About (done)
- - Portfolio (Pending)
+ - Portfolio (done){alignment issues to be fixed}
  - Contact (structure done need some styling improvements(done) && integrated email.js)
   - Need to fix submit button (done)
   - Need validation(done)
   - Progress Bar && error message(done)
-  - env file (not done)
- - Footer (need to add social links && flex box gap on both side to learn)(done)
+  - env file (done)
+ - Footer(done)
  - Dark mode to be added(pending)
  # liveurl(pending)
 

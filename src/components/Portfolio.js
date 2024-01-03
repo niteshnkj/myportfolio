@@ -55,7 +55,10 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center text-center w-full h-auto  bg-gray-100 ">
+    <div
+      className="flex flex-col justify-center items-center text-center w-full h-auto  bg-gray-100"
+      id="portfolio"
+    >
       <div className="my-8">
         <h1 className="text-orange-400 text-2xl font-bold ">MY PORTFOLIO</h1>
         <div className="flex gap-2">
