@@ -17,7 +17,7 @@ const HelloLanguageSwitcher = () => {
     }, 3000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  });
 
   const isHello = greetings[greetingIndex] === "Hello";
 
