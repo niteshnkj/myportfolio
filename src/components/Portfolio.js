@@ -38,7 +38,7 @@ const Portfolio = () => {
         imageUrl:
           "https://res.cloudinary.com/do9s5cxxl/image/upload/v1704229728/Portfolio/portfolio.png",
         techStack: ["React", "Tailwind"],
-        DemoLink: ["https://demo2a.com", "https://demo2b.com"],
+        DemoLink: ["https://demo2a.com", "https://nitesh1405.netlify.app/"],
       },
 
       {

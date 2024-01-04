@@ -31,7 +31,10 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center w-full h-auto lg:h-[90vh]  bg-gray-100 " id="home">
+    <div
+      className="flex justify-between items-center w-full h-auto lg:h-[90vh]  bg-gray-100 "
+      id="home"
+    >
       <div className="flex flex-col-reverse gap-4 lg:gap-0 lg:flex-row justify-between items-center  mx-4 mt-4 lg:mx-44 w-[90%] lg:w-full ">
         <div className="flex flex-col justify-between gap-5 items-center lg:items-start font-semibold ">
           <h1 className=" font-kalam">
@@ -51,7 +54,7 @@ const Banner = () => {
           </div> */}
             <div>
               <a
-                href="https://drive.google.com/file/d/1h4njgqwk9PAzwuJX8YQdeJCfIlz4ip7H/view"
+                href="https://drive.google.com/file/d/1W7txCFYP4EDRHcEYFmcc3BSzkyLK-ghd/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -63,7 +66,7 @@ const Banner = () => {
           </div>
           <div className="flex text-center justify-center gap-2 cursor-pointer text-4xl">
             <a
-              href="https://www.linkedin.com/in/nitesh-kumar-j-0347b0b7/"
+              href="https://www.linkedin.com/in/nitesh1405/"
               target="_blank"
               rel="noopener noreferrer"
             >

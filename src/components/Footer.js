@@ -27,7 +27,7 @@ const Footer = () => {
               <ul className="w-full flex justify-evenly text-3xl lg:text-5xl text-slate-600  ">
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/nitesh-kumar-j-0347b0b7/"
+                    href="https://www.linkedin.com/in/nitesh1405/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
