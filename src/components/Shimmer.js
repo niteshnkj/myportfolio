@@ -2,7 +2,9 @@ import React from 'react'
 
 const Shimmer = () => {
   return (
-    <div>Shimmer</div>
+    <div>
+      loading.........
+    </div>
   )
 }
 
