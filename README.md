@@ -15,5 +15,5 @@
   - env file (done)
  - Footer(done)
  - Dark mode to be added(pending)
- # liveurl(pending)
+ - sm && md device compatibility pending
 
