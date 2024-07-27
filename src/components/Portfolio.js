@@ -26,8 +26,9 @@ const Portfolio = () => {
           "https://res.cloudinary.com/do9s5cxxl/image/upload/v1704227793/Portfolio/Fitness-App_eh0qcb.png",
         techStack: ["React", "Css"],
         DemoLink: [
-          "https://vuwalens.netlify.app/",
           "https://github.com/niteshnkj/fitnessapp",
+          "https://vuwalens.netlify.app/",
+          
         ],
       },
       {
@@ -38,18 +39,26 @@ const Portfolio = () => {
         imageUrl:
           "https://res.cloudinary.com/do9s5cxxl/image/upload/v1704229728/Portfolio/portfolio.png",
         techStack: ["React", "Tailwind"],
-        DemoLink: ["https://demo2a.com", "https://nitesh1405.netlify.app/"],
+        DemoLink: [
+          "https://github.com/niteshnkj/myportfolio",
+          "https://nitesh1405.netlify.app/",
+          
+        ],
       },
 
       {
         id: 4,
-        name: "Swaad Safari (Comming Soon)",
+        name: "Swaad Safari ",
         description:
           "Your culinary journey begins here. Explore a world of flavors, delivered to your doorstep with our food app.",
         imageUrl:
           "https://res.cloudinary.com/do9s5cxxl/image/upload/v1704228707/Portfolio/upcoming_gqfjzf.png",
-        techStack: ["React", "Redux"],
-        DemoLink: ["https://demo4a.com", "https://demo4b.com"],
+        techStack: ["React", "tailwind", "Redux"],
+        DemoLink: [
+          "https://github.com/niteshnkj/swadsafari",
+          "swadsafari.netlify.app",
+          
+        ],
       },
     ],
   };
